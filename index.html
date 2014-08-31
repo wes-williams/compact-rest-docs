@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Demo</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/script.js"></script>
+    <script src="./js/model.js"></script>
+  <head>
+  <body>
+    <div id="api-widget">
+      <div id="api"></div>
+      <div id="overlay">
+        <div>
+          <span class="requestHeadings">Route:</span>
+          <span id="requestRoute"></span>
+          <a id="closeDialog" onclick="document.getElementById('overlay').style.display='none';document.getElementById('fade').style.display='none';"
+             href="#">X</a>
+        </div>
+        <div id="requestParamsSection">
+           <span class="requestHeadings">Params:</span>
+           <span id="requestParams"></span>
+        </div>
+        <div>
+          <div id="requestBodySection">
+            <span class="requestHeadings">Request:</span>
+            <div id="requestBody"></div>
+          </div>
+          <div id="responseBodySection">
+            <span class="requestHeadings">Response:</span>
+            <div id="responseBody"></div>
+          </div>
+        </div>
+      </div>
+      <div id="fade"></div>
+    </div>
+    <script>
+      var d = docs(api);
+      d.giveFocus('courses',document.getElementById('api'));
+    </script>
+  </body>
+</html>

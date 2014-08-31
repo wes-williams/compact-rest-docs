@@ -1,0 +1,164 @@
+#api-widget {
+  width:1200px;
+  font-size: 25px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#api {  
+}
+
+.url {
+  font-size: 0px;
+}
+
+.path {
+  display:inline-block;
+  font-size: 25px;
+  font-weight:bold;
+  margin:0px;
+  padding:0px;
+}
+
+.prepath {
+  text-align:right;
+  width:45%;
+  vertical-align:top;
+}
+.focuspath {
+  font-weight:bold;
+  color:rgba(105,105,105,.75);
+  vertical-align:top;
+}
+
+.postpath {
+  text-align:left;
+}
+
+a.morepath {
+  text-decoration:none;
+  color: black;
+}
+
+a.pathparam {
+  text-decoration:none;
+}
+
+a.pathresource  {
+  text-decoration:none;
+}
+
+a.verbs { 
+  background : black;
+  color : white;
+  font-weight:normal;
+  font-size:16px;
+  text-decoration:none;
+  border-radius: 4px;
+  padding:4px;
+  margin:4px;
+}
+
+/* hopefully 20 colors is enough */
+a.pathstyle0 { color: #DC143C; }
+a.pathstyle1 { color: #00008B; }
+a.pathstyle2 { color: #FFA500; }
+a.pathstyle3 { color: #FF4500; }
+a.pathstyle4 { color: #00FA9A; }
+a.pathstyle5 { color: #4169E1; }
+a.pathstyle6 { color: #DA70D6; }
+a.pathstyle7 { color: #8A2BE2; }
+a.pathstyle8 { color: #32CD32; }
+a.pathstyle9 { color: #00BFFF; }
+a.pathstyle10 { color: #2E8B57; }
+a.pathstyle11 { color: #8B008B; }
+a.pathstyle12 { color: #808000; }
+a.pathstyle13 { color: #008B8B; }
+a.pathstyle14 { color: #4B0082; }
+a.pathstyle15 { color: #ADFF2F; }
+a.pathstyle16 { color: #FF6347; }
+a.pathstyle17 { color: #B8860B; }
+a.pathstyle18 { color: #FFFF00; }
+a.pathstyle19 { color: #800000; }
+
+.requestHeadings {
+  font-weight:bold;  
+}
+
+#requestParamsSection {
+  padding:10px 0px 10px 0px;  
+}
+
+#requestBodySection {
+  float:left;
+  width:48%;
+  height:400px;
+}
+
+#requestBody > * {
+  margin:0px;
+}
+
+#requestBody {
+  border: 1px black solid;
+  height:100%;
+  overflow:auto;
+}
+
+#responseBody > * {
+  margin:0px;
+}
+
+#responseBodySection {
+  float:right;
+  width:48%;
+  height:400px;
+  margin:0px;
+}
+
+#responseBody {
+  border: 1px black solid;
+  height:100%;
+  overflow:auto;
+}
+
+#closeDialog {
+  background-color:black;
+  color:white;
+  border-radius:10px;
+  font-weight:bold;
+  padding:5px;
+  text-decoration:none;
+  float:right;
+  vertical-align:top;
+}
+
+/* http://sldn.softlayer.com/blog/cwolff/Pure-CSS-Modal-Overlays */
+
+#overlay {
+    font-size:25px;
+    display: none; 
+    position: absolute;
+    left: 10%; 
+    top: 10%; 
+    padding: 25px; 
+    border: 2px solid black;
+    background-color: #ffffff;
+    width: 80%;
+    height: 80%;
+    z-index: 100; 
+}
+
+#fade {
+    display: none; 
+    position: absolute;  
+    left: 0%; 
+    top: 0%; 
+    background-color: black;
+    -moz-opacity: 0.7; 
+    opacity: .70;
+    filter: alpha(opacity=70);
+    width: 100%;
+    height: 100%;
+    z-index: 90; 
+}
