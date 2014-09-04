@@ -37,7 +37,7 @@
       var d;
       $(document).ready(function() {
         var s = swaggerModel(document.getElementById('api'));
-        s.addResource('./api-docs');
+        s.addResource('http://petstore.swagger.wordnik.com/api/api-docs');
         s.whenReady(function(model) {
           d = docs(model);
           d.giveFocus('pet');
