@@ -176,3 +176,8 @@ a.pathstyle19 { color: #800000; }
     height: 100%;
     z-index: 90; 
 }
+
+#goswag {
+  height: 100%;
+  overflow: scroll;
+}

@@ -19,14 +19,8 @@ var swaggerModel = function(space) {
             that.model.uriDetails[apiPath].verbs = { };
             for(var k=0;k<apiData.apis[j].operations.length;k++) {
               that.model.uriDetails[apiPath].verbs[apiData.apis[j].operations[k].method] = {
-                'queryString' : null,
-                'requestBody' : {
-                  'name' : 'test'
-                 },
-                 'responseBody' : {
-                   'id' : '123',
-                   'name' : 'test'
-                 }
+               swaggerUrl : url,
+               swaggerName : apiData.resourcePath +'/'+ apiData.apis[j].operations[k].nickname
               };
             }
           }
@@ -45,7 +39,6 @@ var swaggerModel = function(space) {
       }, 100);
     }
     else {
-      console.log(that.model);
       done(that.model);
     }
   };

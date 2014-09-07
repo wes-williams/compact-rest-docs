@@ -169,20 +169,28 @@ var docs = function(api,space) {
     var uris = api.uris;
     var uriVerbs = Object.keys(api.uriDetails[uris[i]]['verbs']);
     uriVerbs.sort();
-    var requestBody = api.uriDetails[uri]['verbs'][uriVerbs[v]]['requestBody'];
-    requestBody = requestBody ? JSON.stringify(requestBody,null,2) : 'N/A';
-    var responseBody = api.uriDetails[uri]['verbs'][uriVerbs[v]]['responseBody'];
-    responseBody = responseBody ? JSON.stringify(responseBody,null,2) : 'N/A';
-    var queryString = api.uriDetails[uri]['verbs'][uriVerbs[v]]['queryString'];
-    queryString = queryString ? JSON.stringify(queryString) : 'N/A';
-    queryString = queryString.replace(/[{}"]/g,'').replace(/[:]/g,'=');
-   
-   document.getElementById('requestRoute').innerHTML = uriVerbs[v] + ' ' + uri;
-    document.getElementById('requestParams').innerHTML = queryString;
-     document.getElementById('requestBody').innerHTML = '<pre>'+requestBody+'</pre>';
-    document.getElementById('responseBody').innerHTML = '<pre>'+responseBody+'</pre>';
-    document.getElementById('overlay').style.display='block';
-    document.getElementById('fade').style.display='block';
+
+    window.swaggerUi = new SwaggerUi({
+      url: api.uriDetails[uri]['verbs'][uriVerbs[v]]['swaggerUrl'],
+      dom_id:"swagger-ui-container",
+      docExpansion: 'full',
+       onComplete: function(swaggerApi, swaggerUi){
+         var scrollOffset = $("a[href$='" + api.uriDetails[uri]['verbs'][uriVerbs[v]]['swaggerName'] + "']").first().offset();
+         if(scrollOffset) {
+           document.getElementById('overlay').style.display='block';
+           setTimeout(function() {
+             var scrollOffset = $("a[href$='" + api.uriDetails[uri]['verbs'][uriVerbs[v]]['swaggerName'] + "']").first().offset();
+             $('#goswag').animate({ scrollTop: scrollOffset.top-100 },400);
+
+           },400);
+
+         }
+       }
+    });
+
+    window.swaggerUi.load();
+
+   document.getElementById('fade').style.display='block';
   };
   that.displayVerb = displayVerb;
     
