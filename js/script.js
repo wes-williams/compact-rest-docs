@@ -180,7 +180,7 @@ var docs = function(api,space) {
            document.getElementById('overlay').style.display='block';
            setTimeout(function() {
              var scrollOffset = $("a[href$='" + api.uriDetails[uri]['verbs'][uriVerbs[v]]['swaggerName'] + "']").first().offset();
-             $('#goswag').animate({ scrollTop: scrollOffset.top-100 },400);
+             $('#documentation').animate({ scrollTop: scrollOffset.top-100 },400);
 
            },400);
 
